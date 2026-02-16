@@ -1,0 +1,95 @@
+/* 1. Global Styles & Background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #1a1b26; /* Deep navy background from image */
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the header content */
+}
+
+/* 2. Header Styles */
+header {
+  text-align: center;
+  margin: 4rem 0 2rem 0;
+}
+
+header h1 {
+  letter-spacing: 0.6rem;
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+header p {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* 3. The Centered Grid Container */
+.places {
+  list-style: none;
+  margin: 2rem auto;
+  padding: 0;
+  display: grid;
+  
+  /* Use auto-fit + justify-content to force centering */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+  justify-content: center; 
+  justify-items: center; /* Ensures items are centered within their own grid cell */
+  
+  gap: 2rem;
+  width: 90%;
+  max-width: 1200px; /* Prevents the grid from becoming too wide on huge monitors */
+}
+
+/* 4. Individual Place Card */
+.place-item {
+  position: relative; /* Essential for the absolute positioning of the h3 */
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #24273a;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease-in-out;
+  width: 100%;
+}
+
+.place-item:hover {
+  transform: translateY(-8px);
+}
+
+.place-item button {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 100%;
+  cursor: pointer;
+  display: block;
+}
+
+.place-item img {
+  width: 100%;
+  height: 250px; /* Fixed height for consistency */
+  object-fit: cover; /* Prevents image distortion */
+  display: block;
+}
+
+/* 5. The Yellow Floating Label (Bottom Right) */
+.place-item h3 {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  margin: 0;
+  padding: 6px 14px;
+  background-color: #facc15; /* The specific yellow from the lab */
+  color: #1a1b26;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
